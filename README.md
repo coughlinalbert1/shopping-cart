@@ -154,5 +154,31 @@ Note:- This is a Sample Project for learning purpose, we have not much considere
 <bold>Thanks a lot,</bold><br/>
                                                                                                         Project Leader<br/>
                                                                                                          <b>Shashi Raj</b>
+# Shopping-cart CSCI 4320 project
+
+## Problem
+
+The biggest problem for the addProduct functions is that it had to handle too many different responsibilities
+
+### Repository Pattern
+
+The **Repository Design Pattern** is used to decouple the business logic from the data access logic.
+
+## Changes and Updates
+
+### 1. **ProductRepository.java**
+
+The `ProductRepository` interface defines the necessary CRUD operations for managing product entities.
+It allows us to add, update, delete, and retrieve products from the data store.
+
+### 2. **ProductRepositoryImpl.java**
+
+This seperated the data access logic.
+This accesses data from the data base
+Allows for file to be extended but closed for modification.
+
+### 3. **ProductServiceImpl.java**
+
+Reformated the addProduct methods to only handle retrieving the data from the form and confirming the database entry
 
 

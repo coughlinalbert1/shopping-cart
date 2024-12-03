@@ -17,12 +17,6 @@ public class TransactionBean implements Serializable {
 
 	private double transAmount;
 
-	private String discountCode;
-
-	private double discountAmount;
-
-	private double finalAmount;
-
 	public TransactionBean() {
 		super();
 		this.transactionId = IDUtil.generateTransId();
@@ -34,8 +28,6 @@ public class TransactionBean implements Serializable {
 		sdf.format(timestamp);
 
 		this.transDateTime = timestamp;
-
-		this.finalAmount = this.transAmount;
 	}
 
 	public TransactionBean(String userName, double transAmount) {
@@ -53,8 +45,6 @@ public class TransactionBean implements Serializable {
 
 		this.transDateTime = timestamp;
 
-		this.finalAmount = this.transAmount;
-
 	}
 
 	public TransactionBean(String transactionId, String userName, double transAmount) {
@@ -70,8 +60,6 @@ public class TransactionBean implements Serializable {
 		sdf.format(timestamp);
 
 		this.transDateTime = timestamp;
-
-		this.finalAmount = this.transAmount;
 	}
 
 	public TransactionBean(String userName, Timestamp transDateTime, double transAmount) {
@@ -80,7 +68,6 @@ public class TransactionBean implements Serializable {
 		this.transDateTime = transDateTime;
 		this.transactionId = IDUtil.generateTransId();
 		this.transAmount = transAmount;
-		this.finalAmount = this.transAmount;
 	}
 
 	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount) {
@@ -89,19 +76,7 @@ public class TransactionBean implements Serializable {
 		this.userName = userName;
 		this.transDateTime = transDateTime;
 		this.transAmount = transAmount;
-		this.finalAmount = this.transAmount;
-	}
 
-	public TransactionBean(String transactionId, String userName, Timestamp transDateTime, double transAmount, 
-							String discountCode, double discountAmount, double finalAmount) {
-		super();
-		this.transactionId = transactionId;
-		this.userName = userName;
-		this.transDateTime = transDateTime;
-		this.transAmount = transAmount;
-		this.discountCode = discountCode;
-		this.discountAmount = discountAmount;
-		this.finalAmount = finalAmount;
 	}
 
 	public String getTransactionId() {
@@ -136,28 +111,4 @@ public class TransactionBean implements Serializable {
 		this.transAmount = transAmount;
 	}
 
-	public String getDiscountCode() {
-		return discountCode;
-	}
-
-	public void setDiscountCode(String discountCode) {
-		this.discountCode = discountCode;
-	}
-
-	public double getDiscountAmount() {
-		return discountAmount;
-	}
-
-	public void setDiscountAmount(double discountAmount) {
-		this.discountAmount = discountAmount;
-	}
-
-	public double getFinalAmount() {
-		return finalAmount;
-	}
-
-	public void setFinalAmount(double finalAmount) {
-		this.finalAmount = finalAmount;
-	}
 }
-
